@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stuart Wilson - Software Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -26,6 +29,18 @@
             <section id="summary" class="tab-panel active">
                 <h2>About Me</h2>
                 <p>Drawing on over two decades of experience in education, I've cultivated a strong ability to understand others' needs and respond to them with effective, practical solutions. Coupled with a recent, intensive refresh of my coding and computer science knowledge - specifically through the Boot.dev back-end development course in Python and Go - I am now seeking opportunities to merge this insight with my passion for creating effective software. My approach to work and life is empathetic, pragmatic and optimistic: I like to delve into a problem to understand it thoroughly, prototyping rapidly to find innovative, elegant and performant solutions. I am passionate about finding ways for technology to enhance the various facets of our lives, without distraction or incumberance.</p>
+                
+                <div class="local-gallery">
+                    <div class="gallery-item">
+                        <img src="images/stuartw-1.jpg" alt="Stuart Wilson" loading="lazy">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/stuartw-2.jpg" alt="Stuart Wilson" loading="lazy">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/stuartw-3.jpg" alt="Stuart Wilson" loading="lazy">
+                    </div>
+                </div>
             </section>
 
             <section id="projects" class="tab-panel">
@@ -33,6 +48,20 @@
                 <div class="project-item">
                     <h3>Droplet (School Noticeboard App)</h3>
                     <p>A full-stack web application to streamline school communication using a Go REST API (featuring JWT auth, RBAC, PostgreSQL with sqlc, transactions). Containerised with Docker and deployed to Render.</p>
+                    <div class="project-screenshots">
+                        <div class="project-screenshot animated">
+                            <img src="images/droplet_animated.gif" alt="Droplet app demo animation">
+                        </div>
+                        <div class="project-screenshot">
+                            <img src="images/droplet_all_drops.png" alt="Droplet drop view">
+                        </div>
+                        <div class="project-screenshot">
+                            <img src="images/droplet_user_settings.png" alt="Droplet user settings">
+                        </div>
+                        <div class="project-screenshot">
+                            <img src="images/droplet_admin_page.png" alt="Droplet admin page">
+                        </div>
+                    </div>
                     <p>
                         <a href="https://droplet-app.onrender.com/" target="_blank">Live Demo</a> |
                         <a href="https://github.com/5tuartw/droplet" target="_blank">GitHub Repository</a>
@@ -88,16 +117,36 @@
 
             <section id="education" class="tab-panel">
                 <h2>Education & Certifications</h2>
-                <h3>Boot.dev Backend Developer Career Path</h3>
-                <p>Passed 09/04/2025. Covers Python, Go, SQL, Memory Management in C, Functional Programming, OO Programming, Data Structures and Algorithms, HTTP Clients, Servers, and more.</p>
-                <p><a href="https://www.boot.dev/u/stuartw" target="_blank">View Boot.dev Profile</a></p>
-                <h3>BSc (Hons) Computer Science (2002)</h3>
-                <p>Awarded 2:1, University of Manchester. Final year project: using AI techniques to analyse web log files to determine how effectively users can reach their destination page.</p>
-                <h3>Post-graduate Diploma STEM Education (2024)</h3>
-                <p>Awarded Pass with Merit, King’s College University, London. Courses included ‘Policies and Practice in STEM Education’, ‘Use of Technology in Education, and ‘Making and Creating’.</p>
-                <h3>PGCE Primary Education with Modern Foreign Languages (2007)</h3>
-                <p>University of East Anglia, Norwich.</p>
-                <p>Other certifications include: Certificate in ‘Improving gender balance in computer science’ from the National Centre for Computing Education ‘I belong’ programme, First aid certificate (paediatric) (valid until March 2027).</p>
+                <div class="education-entry">
+                    <img src="images/bootdotdev_logo.jpg" alt="Boot.dev Logo" class="education-logo">
+                    <div class="education-content">
+                        <h3>Boot.dev Backend Developer Career Path</h3>
+                        <p>Passed 09/04/2025. Covers Python, Go, SQL, Memory Management in C, Functional Programming, OO Programming, Data Structures and Algorithms, HTTP Clients, Servers, and more.</p>
+                        <p><a href="https://www.boot.dev/u/stuartw" target="_blank">View Boot.dev Profile</a></p>
+                    </div>
+                </div>
+                <div class="education-entry">
+                    <img src="images/logo-university-of-manchester.png" alt="University of Manchester Logo" class="education-logo">
+                    <div class="education-content">
+                        <h3>BSc (Hons) Computer Science (2002)</h3>
+                        <p>Awarded 2:1, University of Manchester. Final year project: using AI techniques to analyse web log files to determine how effectively users can reach their destination page.</p>
+                    </div>
+                </div>
+                <div class="education-entry">
+                    <img src="images/kings_college_london_logo.jpg" alt="King's College London Logo" class="education-logo">
+                    <div class="education-content">
+                        <h3>Post-graduate Diploma STEM Education (2024)</h3>
+                        <p>Awarded Pass with Merit, King's College University, London. Courses included 'Policies and Practice in STEM Education', 'Use of Technology in Education, and 'Making and Creating'.</p>
+                    </div>
+                </div>
+                <div class="education-entry">
+                    <img src="images/uea-logo.jpg" alt="University of East Anglia Logo" class="education-logo">
+                    <div class="education-content">
+                        <h3>PGCE Primary Education with Modern Foreign Languages (2007)</h3>
+                        <p>University of East Anglia, Norwich.</p>
+                    </div>
+                </div>
+                <p>Other certifications include: Certificate in 'Improving gender balance in computer science' from the National Centre for Computing Education 'I belong' programme, First aid certificate (paediatric) (valid until March 2027).</p>
 
                 <h2>Skills</h2>
                 <p><strong>Programming languages:</strong> (recent) Python, Go, JavaScript, SQL; (during undergraduate degree) Java, C, Prolog.</p>
@@ -111,5 +160,9 @@
         </div>
     </div>
     <script src="script.js"></script>
+    <div class="modal" id="imageModal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
 </body>
 </html>
