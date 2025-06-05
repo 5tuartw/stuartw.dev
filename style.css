@@ -1,43 +1,139 @@
+:root {
+    /* Define colors for easier theme management */
+    --background-dark: #1a1a2e;
+    --card-background: #16213e;
+    --text-light: #e0e0e0;
+    --heading-color: #e94560; /* Bold highlighting color */
+    --accent-color: #0f3460; /* Slightly darker accent for elements */
+    --link-color: #88d498; /* Bright green/blue for links */
+    --border-color: #0f3460;
+    --shadow-color: rgba(0, 0, 0, 0.4);
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     margin: 0;
-    padding: 20px;
-    background-color: #f4f4f4;
-    color: #333;
+    padding: 0; /* Remove padding here, add to container if needed */
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures body takes full viewport height */
 }
 
 header {
     text-align: center;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #ddd;
-    margin-bottom: 30px;
+    padding: 40px 20px;
+    background-color: var(--card-background);
+    border-bottom: 2px solid var(--heading-color);
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px var(--shadow-color);
 }
 
 header h1 {
-    margin-bottom: 5px;
-    color: #0056b3;
+    margin-bottom: 10px;
+    color: var(--heading-color);
+    font-size: 3em;
+    text-shadow: 0 0 10px rgba(233, 69, 96, 0.5); /* Subtle glow effect */
+}
+
+header p {
+    color: var(--text-light);
+    font-size: 1.1em;
+}
+
+header a {
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header a:hover {
+    color: var(--text-light);
+    text-decoration: underline;
+}
+
+.tabs-container {
+    flex-grow: 1; /* Allows container to take available space */
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto 30px auto;
+    background-color: var(--card-background);
+    border-radius: 12px;
+    box-shadow: 0 8px 16px var(--shadow-color);
+    overflow: hidden; /* Contains potential overflow from sections */
+}
+
+.tab-buttons {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--accent-color);
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.tab-button {
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 15px 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.tab-button:hover {
+    background-color: var(--background-dark);
+}
+
+.tab-button.active {
+    background-color: var(--heading-color); /* Bold active tab highlight */
+    color: var(--card-background); /* Dark text on bold highlight */
+    border-radius: 8px; /* Slightly rounded corners for active tab */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.tab-content {
+    padding: 20px;
 }
 
 section {
-    background-color: #fff;
-    padding: 20px;
-    margin-bottom: 20px;
+    background-color: var(--card-background); /* Consistent background for content */
+    padding: 25px;
+    margin-bottom: 20px; /* Space between sections if not hidden by JS */
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px var(--shadow-color);
+    display: none; /* Hidden by default, JavaScript will show the active one */
+}
+
+section.active {
+    display: block; /* Shown when active */
 }
 
 h2 {
-    color: #0056b3;
-    border-bottom: 2px solid #eee;
+    color: var(--heading-color);
+    border-bottom: 2px solid var(--accent-color);
     padding-bottom: 10px;
     margin-top: 0;
+    font-size: 2em;
+    text-shadow: 0 0 5px rgba(233, 69, 96, 0.3);
+}
+
+h3 {
+    color: var(--link-color); /* Use link color for subheadings */
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 .project-item {
-    margin-bottom: 15px;
-    padding-bottom: 15px;
-    border-bottom: 1px dashed #eee;
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px dashed var(--accent-color);
 }
 
 .project-item:last-child {
@@ -45,19 +141,61 @@ h2 {
 }
 
 a {
-    color: #007bff;
+    color: var(--link-color);
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 a:hover {
     text-decoration: underline;
+    color: var(--heading-color);
 }
 
-footer {
-    text-align: center;
-    padding-top: 20px;
-    border-top: 1px solid #ddd;
-    margin-top: 30px;
-    font-size: 0.9em;
-    color: #777;
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* Adjustments for the Google Form iframe */
+#connect iframe {
+    width: 100%;
+    max-width: 770px; /* Maintain max-width from original */
+    height: 800px;
+    display: block; /* Ensures it takes full width */
+    margin: 20px auto; /* Center the form */
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .tab-buttons {
+        flex-direction: column;
+    }
+    .tab-button {
+        padding: 12px 15px;
+    }
+    header h1 {
+        font-size: 2.2em;
+    }
+    .tabs-container {
+        width: 95%;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+    section {
+        padding: 15px;
+    }
+    h2 {
+        font-size: 1.8em;
+    }
 }
